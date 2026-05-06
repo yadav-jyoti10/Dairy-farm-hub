@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: url("images/morden\ farming.jpg") no-repeat center center/cover;
+}
+
+/* page center */
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+}
+
+/* glass card */
+.login-card {
+    width: 380px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.login-card h1 {
+    text-align: center;
+    color: #0b3c5d;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #0b3c5d;
+}
+
+.extra-links {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.extra-links a {
+    text-decoration: none;
+    font-size: 13px;
+    color: #0b3c5d;
+}
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    background: #0b3c5d;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #092e46;
+}
+
+.register-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.register-text a {
+    color: #0b3c5d;
+    text-decoration: none;
+    font-weight: 600;
+}
+.forgot-link {
+    text-align: right;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.forgot-link a {
+    color: #0b3c5d;
+    text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(120deg, #dff5e3, #bfe6cc);
+}
+
+.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  width: 380px;
+  padding: 30px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* SAME EFFECT AS HOME PAGE */
+.login-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(40,167,69,0.35);
+}
+
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e5631;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.login-card input:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 6px rgba(40,167,69,0.4);
+}
+
+.login-card button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-card button:hover {
+  background: #1e7e34;
+}
+
+.login-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-links a {
+  font-size: 14px;
+  color: #1e5631;
+  text-decoration: none;
+}
+/* SUCCESS POPUP */
+.success-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.popup-box {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    text-align: center;
+    animation: popupZoom 0.4s ease;
+}
+
+.popup-box h2 {
+    color: #2ecc71;
+    margin-bottom: 10px;
+}
+
+.popup-box p {
+    font-size: 14px;
+    color: #555;
+}
+
+@keyframes popupZoom {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.password-box{
+    position: relative;
+}
+
+.password-box input{
+    width: 100%;
+    padding-right: 40px;
+}
+
+#togglePassword{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#errorMsg{
+    color: red;
+    font-size: 14px;
+    margin-top: 8px;
+    display: none;
+}
+.error{
+    color: red;
+    font-size: 13px;
+    margin-top: 4px;
+    display: block;
+}
+
+.password-box{
+    position: relative;
+}
+
+.eye{
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}

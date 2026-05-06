@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dairy Farm Hub | Animal Records</title>
+    <link rel="stylesheet" href="./CSS/sidebar.css" />
+    <link rel="stylesheet" href="./CSS/Animal.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>Dairy Farm Hub</h2>
+      <a href="dashboard.html">Dashboard</a>
+      <a class="active" href="Animal.html">Animals</a>
+      <a href="Milk.html">Milk Records</a>
+      <a href="Feed.html">Feed</a>
+      <a href="Sales.html">Sales</a>
+      <button class="logout">Logout</button>
+    </div>
+    
+    <div class="main">
+      <div class="topbar">
+        <h1>Animal</h1>
+        <div class="user-right" id="topUser"></div>
+      </div>
+
+      <div class="content-box">
+        <div class="table-box">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+            <h3 style="margin:0;">Show All Animals</h3>
+
+            <!-- ✅ Search -->
+            <input
+              id="animalSearch"
+              type="search"
+              placeholder="Search by name / type / earTag"
+              style="max-width:280px; width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:10px;"
+            />
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+
+            <tbody id="animalTableBody"></tbody>
+          </table>
+        </div>
+
+        <div class="form-box">
+          <h3>Animal Information</h3>
+
+          <div class="form-grid">
+            <div>
+              <label>Animal ID</label>
+              <input type="text" id="animalId" readonly />
+            </div>
+
+            <div>
+              <label>Animal Name</label>
+              <input type="text" id="animalName" />
+            </div>
+
+            <div>
+              <label>Animal Type</label>
+              <input type="text" id="animalType" />
+            </div>
+
+            <div>
+              <label>Ear Tag</label>
+              <input type="text" id="earTag" placeholder="Unique (per user)" />
+            </div>
+
+            <div>
+              <label>Date of Birth</label>
+              <input type="date" id="dob" />
+            </div>
+
+            <div>
+              <label>First Baby Birth</label>
+              <input type="date" id="firstBirth" />
+            </div>
+
+            <div>
+              <label>Color</label>
+              <input type="text" id="color" />
+            </div>
+
+            <div>
+              <label>Breed</label>
+              <input type="text" id="breed" />
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button class="add-btn" onclick="addAnimal()">Add</button>
+            <button class="update-btn" onclick="updateAnimal()">Update</button>
+            <button class="delete-btn" onclick="deleteAnimal()">Delete</button>
+            <button class="delete-btn" style="background:#334155;" onclick="clearAnimalForm()">Clear</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./JS/Animal.js"></script>
+    <script src="./JS/auth.js"></script>
+  </body>
+</html>

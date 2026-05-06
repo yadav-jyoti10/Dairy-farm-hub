@@ -1,0 +1,128 @@
+/* Animal.css (page-only) */
+
+.main h1 {
+  margin-bottom: 18px;
+  color: var(--text);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.user-right {
+  background: #ffffff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-weight: bold;
+  color: #0b3c5d;
+}
+
+.content-box {
+  display: flex;
+  gap: 20px;
+}
+
+.table-box,
+.form-box {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.table-box {
+  width: 55%;
+}
+
+.form-box {
+  width: 45%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+tbody tr:hover {
+  background: #f1f5f9;
+  cursor: pointer;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+label {
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 9px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.btn-group button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.add-btn {
+  background: #16a34a;
+}
+.add-btn:hover {
+  background: #12813b;
+}
+
+.update-btn {
+  background: #2563eb;
+}
+.update-btn:hover {
+  background: #1e4fd1;
+}
+
+.delete-btn {
+  background: #dc2626;
+}
+.delete-btn:hover {
+  background: #b91c1c;
+}
+
+@media (max-width: 900px) {
+  .content-box {
+    flex-direction: column;
+  }
+  .table-box,
+  .form-box {
+    width: 100%;
+  }
+}

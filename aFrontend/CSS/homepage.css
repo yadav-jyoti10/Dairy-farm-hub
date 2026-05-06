@@ -1,0 +1,515 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+header {
+  background: #0b5b36;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  width: 60px;
+  margin-right: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+nav a:hover {
+  background: #fff;
+  color: #0b5b36;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-link h1 {
+  margin: 0;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  height: 85vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Slides */
+.hero-slides {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.1);
+  transition:
+    opacity 0.1s ease,
+    transform 1s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Gradient overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.65)
+  );
+  z-index: 1;
+}
+
+/* Text content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+/* Button */
+.hero-btn {
+  padding: 14px 34px;
+  background: #28a745;
+  color: white;
+  border-radius: 40px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background: #1e7e34;
+}
+
+/* ANIMAL SECTION */
+.animal-info {
+  padding: 40px;
+  text-align: center;
+}
+
+.animal-cards {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card {
+  width: 300px;
+  margin: 10px;
+  padding: 20px;
+  background: #e9ffe9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px gray;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card ul {
+  text-align: left;
+  margin-top: 10px;
+}
+/* ✅ Animal Information alignment fix (only CSS) */
+.animal-info h1 {
+  margin-bottom: 6px;
+}
+
+.animal-info > p {
+  margin-bottom: 18px;
+  color: #475569;
+}
+
+/* cards grid spacing better */
+.animal-cards {
+  align-items: stretch;           /* all cards equal height */
+  gap: 18px;
+}
+
+/* Card layout + spacing */
+.animal-cards .card {
+  text-align: left;              /* ✅ left aligned content */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;                     /* consistent spacing */
+  line-height: 1.55;
+}
+
+/* Image fixed height so all cards match */
+.animal-cards .card img {
+  height: 170px;
+  object-fit: cover;
+}
+
+/* Headings */
+.animal-cards .card h3 {
+  margin-top: 6px;
+  margin-bottom: 2px;
+  font-size: 18px;
+}
+
+/* Paragraphs spacing */
+.animal-cards .card p {
+  margin: 0;                     /* remove default random margins */
+  color: #1f2937;
+  font-size: 14px;
+}
+
+/* ✅ Bullet-like paragraphs (•) ko proper align */
+.animal-cards .card p:first-of-type,
+.animal-cards .card p:nth-of-type(2),
+.animal-cards .card p:nth-of-type(3),
+.animal-cards .card p:nth-of-type(4) {
+  padding-left: 14px;
+  position: relative;
+}
+
+/* If paragraph starts with '•' then keep it aligned nicely */
+.animal-cards .card p::before {
+  content: "";
+}
+
+/* Better UL alignment */
+.animal-cards .card ul {
+  margin-top: 6px;
+  padding-left: 18px;            /* ✅ proper left indent */
+}
+
+.animal-cards .card ul li {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #111827;
+}
+
+/* Optional: soften card look a bit */
+.animal-cards .card {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+/* Variety section */
+.variety-section {
+  padding: 60px 8%;
+  background: #f6faf7;
+}
+
+.variety-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #0b3c5d;
+}
+
+.variety-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.variety-grid img {
+  width: 80%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.variety-grid ul {
+  padding-left: 18px;
+}
+
+.variety-grid li {
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+/* Rules */
+.rules {
+  background: #f4fff4;
+  padding: 40px;
+}
+
+.rules-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Footer */
+.footer {
+  background-color: #0f172a;
+  color: #d1d5db;
+  padding: 50px 0 0;
+  margin-top: 60px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.footer-box h3 {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.footer-box p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-box ul li {
+  margin-bottom: 10px;
+}
+
+.footer-box ul li a {
+  color: #d1d5db;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-box ul li a:hover {
+  color: #38bdf8;
+}
+
+.footer-bottom {
+  background-color: #020617;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+/* ========================= */
+/* ✅ YOUR ANIMATION CSS SAME */
+/* ========================= */
+
+.home-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border 0.25s ease;
+}
+
+/* 👇 subtle movement */
+.home-card:hover {
+  transform: translateY(-6px);
+  border-color: #28a745;
+  box-shadow: 0 14px 30px rgba(40, 167, 69, 0.35);
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-card {
+  transition: all 0.4s ease;
+}
+
+.home-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(40, 167, 69, 0.35);
+}
+
+.home-card img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+.home-card:hover img {
+  transform: scale(1.08);
+}
+
+.cool-btn {
+  background: #28a745;
+  color: white;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 25px;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cool-btn:hover {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(40, 167, 69, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+  }
+}
+
+.rules-list {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border 0.25s ease;
+}
+
+.rules-list:hover {
+  transform: translateY(-6px);
+  border-color: #28a745;
+  box-shadow: 0 14px 30px rgba(40, 167, 69, 0.35);
+}
+
+.animal-cards {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border 0.25s ease;
+}
+
+/* 👇 subtle movement */
+.animal-cards:hover {
+  transform: translateY(-6px);
+  border-color: #28a745;
+  box-shadow: 0 14px 30px rgba(40, 167, 69, 0.35);
+}
+
+.animal-cards {
+  transition: all 0.4s ease;
+}
+
+.animal-cards:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(40, 167, 69, 0.35);
+}
+
+.animal-cards img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+.animal-cards:hover img {
+  transform: scale(1.08);
+}
+/* ✅ keep animal-cards container stable */
+.animal-cards {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  /* NEW */
+  overflow: hidden;     /* prevents out of container movement */
+  padding: 10px;
+}
+
+.animal-cards:hover {
+  transform: none;      /* remove container hover movement */
+  border-color: transparent;
+  box-shadow: none;
+}
+.card img,
+.home-card img {
+  transition: transform 0.35s ease;
+}
+
+.home-card:hover img,
+.card:hover img {
+  transform: scale(1.03);  /* pehle 1.08 tha, ab safe */
+}

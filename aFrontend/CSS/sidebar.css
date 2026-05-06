@@ -1,0 +1,81 @@
+/* sidebar.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --sidebar-w: 240px;
+  --sidebar-bg: #0b3c5d;
+  --sidebar-hover: #1f6aa5;
+  --danger: #e74c3c;
+  --page-bg: #f4f6f8;
+  --card: #ffffff;
+  --text: #0f172a;
+  --shadow: 0 8px 20px rgba(0,0,0,0.10);
+}
+
+body {
+  background: var(--page-bg);
+}
+
+/* ===== COMMON SIDEBAR ===== */
+.sidebar {
+  width: var(--sidebar-w);
+  height: 100vh;
+  background: var(--sidebar-bg);
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 22px;
+  font-size: 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: 0.2s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: var(--sidebar-hover);
+}
+
+.sidebar .logout {
+  margin-top: auto;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--danger);
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ===== COMMON MAIN OFFSET ===== */
+.main {
+  margin-left: var(--sidebar-w);
+  padding: 30px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  :root { --sidebar-w: 210px; }
+  .main { padding: 20px; }
+}

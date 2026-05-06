@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dairy Farm Hub | Login</title>
+    <link rel="stylesheet" href="./CSS/login.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-card">
+        <h1>Dairy Farm Hub</h1>
+        <p class="subtitle">Smart Farm Management System</p>
+
+        <form id="loginForm">
+          <label>Email or user id </label>
+          <input type="text" id="email" placeholder="Enter email or user id " />
+          <small class="error" id="emailError"></small>
+
+          <label>Password</label>
+          <div class="password-box">
+            <input
+              type="password"
+              id="password"
+              placeholder="Minimum 8 characters"
+            />
+            <span id="togglePassword">👁</span>
+          </div>
+          <small class="error" id="passwordError"></small>
+
+          <div class="extra-links">
+            <a href="forgot.html">Forgot Password?</a>
+          </div>
+          <p id="errorMsg"></p>
+
+          <button type="submit">Login</button>
+
+          <p class="register-text">
+            New user? <a href="register.html">Create Account</a>
+          </p>
+        </form>
+        <div class="success-popup" id="successPopup">
+          <div class="popup-box">
+            <h2>✅ Login Successful</h2>
+            <p>Welcome to Dairy Farm Hub</p>
+            <button id="okBtn">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./JS/login.js"></script>
+  </body>
+</html>

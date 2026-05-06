@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dairy Farm Hub | Dashboard</title>
+    <link rel="stylesheet" href="./CSS/sidebar.css" />
+    <link rel="stylesheet" href="./CSS/dashboard.css" />
+
+    <!-- Charts + PDF -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.5.31/dist/jspdf.plugin.autotable.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Dairy Farm Hub</h2>
+
+      <a class="active" href="dashboard.html">Dashboard</a>
+      <a href="Animal.html">Animals</a>
+      <a href="Milk.html">Milk Records</a>
+      <a href="Feed.html">Feed</a>
+      <a href="Sales.html">Sales</a>
+      <button class="logout">Logout</button>
+    </div>
+    <!-- ✅ Profile Modal -->
+<div id="profileModal" class="modal" style="display:none;">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3>My Profile</h3>
+      <button id="btnCloseProfile" type="button">✖</button>
+    </div>
+
+    <div class="modal-body">
+      <label>User ID</label>
+      <input id="pUserId" type="text" readonly />
+
+      <label>Name</label>
+      <input id="pName" type="text" readonly />
+
+      <label>Email</label>
+      <input id="pEmail" type="text" readonly />
+    </div>
+  </div>
+</div>
+
+    <!-- Main -->
+    <div class="main">
+      <!-- Top Bar -->
+      <div class="topbar">
+        <h1>Dashboard</h1>
+        <div class="user-right" id="topUser" style="cursor:pointer;"></div>
+      </div>
+
+      <!-- Cards -->
+      <div class="cards">
+        <div class="card">
+          <h3>Total Animals</h3>
+          <p id="cardAnimals">0</p>
+        </div>
+
+        <div class="card">
+          <h3>Today Milk (L)</h3>
+          <p id="cardTodayMilk">0</p>
+        </div>
+
+        <div class="card">
+          <h3>Monthly Milk (L)</h3>
+          <p id="cardMonthMilk">0</p>
+        </div>
+
+        <div class="card">
+          <h3>Top Performing Animal</h3>
+          <p id="cardTopAnimal">-</p>
+        </div>
+
+        <div class="card">
+          <h3>Milk vs Feed Ratio</h3>
+          <p id="cardMilkFeedRatio">0</p>
+        </div>
+
+        <div class="card">
+          <h3>Monthly Profit (Est.)</h3>
+          <p id="cardMonthlyProfit">₹ 0</p>
+        </div>
+      </div>
+
+      <!-- Filters row (same) -->
+      <div class="filters">
+        <div class="filter-box">
+          <label>Select Date</label>
+          <input type="date" id="dailyDate" />
+          <button id="btnDailySales" type="button">Show Daily Sales</button>
+
+          <div class="result-box" id="dailySalesBox">
+            <div class="result-title">Daily Sales Summary</div>
+            <div class="result-line">
+              <span>Date:</span> <b id="dailyDateText">-</b>
+            </div>
+            <div class="result-line">
+              <span>Total Sales:</span> <b id="dailyTotalText">₹ 0</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-box">
+          <label>Select Month</label>
+          <input type="month" id="monthlyMonth" />
+          <button id="btnMonthlySales" type="button">Show Monthly Sales</button>
+
+          <div class="result-box" id="monthlySalesBox">
+            <div class="result-title">Monthly Sales Summary</div>
+            <div class="result-line">
+              <span>Month:</span> <b id="monthlyMonthText">-</b>
+            </div>
+            <div class="result-line">
+              <span>Total Sales:</span> <b id="monthlyTotalText">₹ 0</b>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✅ NEW: 3 equal boxes row -->
+      <div class="filters three-grid">
+        <!-- 1) Export PDF -->
+        <div class="filter-box">
+          <label>Export Monthly Report</label>
+          <button id="btnExportPDF" type="button">Export PDF</button>
+
+          <div class="result-box">
+            <div class="result-title">PDF Report</div>
+            <div style="color:#64748b; font-size:14px;">
+              Month wise report with Profit, Top Animal, Ratio + Tables.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2) Prediction -->
+        <div class="filter-box">
+          <label>Prediction</label>
+
+          <div class="result-box">
+            <div class="result-title">Next Month Milk Prediction</div>
+            <div style="display:flex; align-items:baseline; gap:10px;">
+              <div style="font-size:34px; font-weight:800;" id="predValue">-</div>
+              <div style="color:#64748b; font-size:14px;">Liters</div>
+            </div>
+
+            <div style="margin-top:10px; color:#64748b; font-size:14px;">
+              Based on last 3 months average milk.
+            </div>
+
+            <div style="margin-top:10px; font-size:13px; color:#475569;">
+              Confidence: <b id="predConf">-</b>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3) Smart Alerts -->
+        <div class="filter-box">
+          <label>Smart Alerts</label>
+
+          <div class="result-box" id="alertBox">
+            <div style="color:#64748b; font-size:14px;">No alerts</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts -->
+      <div class="filters charts-grid">
+        <div class="filter-box">
+          <div class="result-title">Milk Trend (Daily in Selected Month)</div>
+          <canvas id="chartMilkDaily" height="120"></canvas>
+        </div>
+
+        <div class="filter-box">
+          <div class="result-title">Sales Trend (Daily in Selected Month)</div>
+          <canvas id="chartSalesDaily" height="120"></canvas>
+        </div>
+      </div>
+
+      <div class="filters charts-grid">
+        <div class="filter-box">
+          <div class="result-title">Milk by Animal (Selected Month)</div>
+          <canvas id="chartMilkByAnimal" height="120"></canvas>
+        </div>
+
+        <div class="filter-box">
+          <div class="result-title">Feed by Type (Selected Month)</div>
+          <canvas id="chartFeedByType" height="120"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <script src="./JS/dashboard.js"></script>
+    <script src="./JS/auth.js"></script>
+  </body>
+</html>

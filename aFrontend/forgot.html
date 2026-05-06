@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dairy Farm Hub | Forgot Password</title>
+    <link rel="stylesheet" href="./CSS/forgot.css" />
+  </head>
+
+  <body>
+    <div class="forgot-container">
+      <div class="forgot-card">
+        <h1>Forgot Password</h1>
+        <p class="subtitle">Enter your registered email / mobile / user_id</p>
+
+        <form id="forgotForm">
+          <!-- STEP 1: USER IDENTIFIER -->
+          <label>Registered email / mobile / user_id</label>
+          <input
+            type="text"
+            id="userId"
+            placeholder="e.g. DFH9588 or email or mobile"
+          />
+          <small class="error" id="userIdError"></small>
+
+          <button type="button" id="verifyBtn">Send OTP</button>
+
+          <!-- STEP 2: OTP SECTION -->
+          <div id="resetSection" style="display: none; margin-top: 20px">
+            <label>OTP</label>
+            <input
+              type="text"
+              id="otp"
+              placeholder="Enter 6-digit OTP"
+              maxlength="6"
+            />
+
+            <div class="otp-row">
+              <span class="timer-chip" id="timerText">05:00</span>
+
+              <button type="button" id="resendBtn" class="resend-btn" disabled>
+                Resend OTP
+              </button>
+            </div>
+
+            <small class="error" id="otpError"></small>
+
+            <button type="button" id="otpVerifyBtn" style="margin-top: 10px">
+              Verify OTP
+            </button>
+          </div>
+
+          <!-- STEP 3: NEW PASSWORD -->
+          <div id="newPassSection" style="display: none; margin-top: 20px">
+            <label>New Password</label>
+            <div class="password-box">
+              <input
+                type="password"
+                id="newPassword"
+                placeholder="New strong password" 
+              />
+              <span class="eye" onclick="togglePassword('newPassword', this)"
+                >👁</span
+              >
+            </div>
+
+            <!-- Strength meter -->
+            <div id="strengthWrap" style="margin-top: 10px">
+              <div
+                style="
+                  height: 8px;
+                  border-radius: 6px;
+                  background: #e5e7eb;
+                  overflow: hidden;
+                "
+              >
+                <div
+                  id="strengthBar"
+                  style="height: 8px; width: 0%; background: #ef4444"
+                ></div>
+              </div>
+              <small
+                id="strengthText"
+                style="display: block; margin-top: 6px; color: #64748b"
+              ></small>
+            </div>
+
+            <small class="error" id="passwordError"></small>
+
+            <button type="submit" style="margin-top: 10px">
+              Reset Password
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="./JS/forgot.js"></script>
+  </body>
+</html>

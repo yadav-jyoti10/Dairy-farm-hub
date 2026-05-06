@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dairy Farm Hub | Feed</title>
+    <link rel="stylesheet" href="CSS/sidebar.css" />
+    <link rel="stylesheet" href="CSS/Feed.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>Dairy Farm Hub</h2>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="Animal.html">Animals</a>
+      <a href="Milk.html">Milk Records</a>
+      <a class="active" href="Feed.html">Feed</a>
+      <a href="Sales.html">Sales</a>
+      <button class="logout">Logout</button>
+    </div>
+
+    <div class="main">
+      <div class="topbar">
+        <h1>Feed Management</h1>
+        <div class="user-right" id="topUser"></div>
+      </div>
+
+      <div class="content">
+        <div class="table-box">
+          <h3>Feed Records</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Animal ID</th>
+                <th>Feed Type</th>
+                <th>Quantity (kg)</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+
+            <!-- ✅ Fresh per-user table -->
+            <tbody id="feedTableBody"></tbody>
+          </table>
+        </div>
+
+        <div class="form-box">
+          <h3>Add / Update Feed</h3>
+
+          <label>Animal ID</label>
+          <input type="number" />
+
+          <label>Feed Type</label>
+          <select>
+            <option>Dry Feed</option>
+            <option>Green Feed</option>
+            <option>Concentrate</option>
+          </select>
+
+          <label>Quantity (kg)</label>
+          <input type="number" />
+
+          <label>Date</label>
+          <input type="date" />
+
+          <div class="buttons">
+            <button class="btn-add">Add</button>
+            <button class="btn-update">Update</button>
+            <button class="btn-delete">Delete</button>
+            <button class="btn-clear" style="background: #334155">Clear</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./JS/Feed.js"></script>
+    <script src="./JS/auth.js"></script>
+  </body>
+</html>

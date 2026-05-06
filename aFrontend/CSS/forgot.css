@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: url("images/black\ 1cow.jpeg") no-repeat center center/cover;
+}
+
+.forgot-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.55);
+}
+
+.forgot-card {
+    width: 380px;
+    background: rgba(255,255,255,0.95);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.forgot-card h1 {
+    text-align: center;
+    color: #0b3c5d;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: gray;
+    margin: 12px 0 20px;
+}
+
+label {
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 11px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+input:focus {
+    outline: none;
+    border-color: #0b3c5d;
+}
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #0b3c5d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #092e46;
+}
+
+.back-login {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.back-login a {
+    color: #0b3c5d;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(120deg, #dff5e3, #bfe6cc);
+}
+
+.forgot-container{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.forgot-card {
+  width: 380px;
+  padding: 30px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* SAME EFFECT AS HOME PAGE */
+.forgot-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(40,167,69,0.35);
+}
+
+.forgot-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e5631;
+}
+
+.forgot-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.forgot-card input:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 6px rgba(40,167,69,0.4);
+}
+
+.forgot-card button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.forgot-card button:hover {
+  background: #1e7e34;
+}
+
+.login-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-links a {
+  font-size: 14px;
+  color: #1e5631;
+  text-decoration: none;
+}
+.password-box {
+  position: relative;
+}
+
+.password-box input {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+}
+
+.eye {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+}
+/* ===== OTP ROW UI FIX ===== */
+.otp-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-top:10px;
+}
+
+.timer-chip{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:70px;
+  height:32px;
+  padding:0 12px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:0.9rem;
+  color:#0f172a;
+  background:#eef2ff;          /* soft chip bg */
+  border:1px solid #c7d2fe;     /* subtle border */
+}
+
+.resend-btn{
+  appearance:none;
+  border:none;
+  background:transparent;
+  color:#0b5ed7;
+  font-weight:700;
+  cursor:pointer;
+  padding:6px 10px;
+  border-radius:10px;
+  transition:0.2s ease;
+}
+
+.resend-btn:hover{
+  background:#e7f1ff;
+}
+
+.resend-btn:disabled{
+  cursor:not-allowed;
+  opacity:0.55;
+  background:transparent;
+  color:#64748b;
+}
+
+/* OPTIONAL: make OTP verify button spacing nicer */
+#otpVerifyBtn{
+  margin-top:12px;
+}

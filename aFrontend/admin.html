@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin | Dairy Farm Hub</title>
+    <link rel="stylesheet" href="./CSS/sidebar.css" />
+    <link rel="stylesheet" href="./CSS/admin.css" />
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <h2>Dairy Farm Hub</h2>
+      <a class="active" href="admin.html">Admin Dashboard</a>
+      <a href="dashboard.html">User Dashboard</a>
+      <button class="logout">Logout</button>
+    </div>
+
+    <div class="main">
+      <div class="topbar">
+        <h1>Admin Dashboard</h1>
+        <div class="user-right" id="topUser"></div>
+      </div>
+
+      <div class="admin-cards">
+        <div class="a-card">
+          <h3>Total Users</h3>
+          <p id="totalUsers">0</p>
+        </div>
+        <div class="a-card">
+          <h3>Blocked Users</h3>
+          <p id="blockedUsers">0</p>
+        </div>
+      </div>
+
+      <div class="admin-box">
+        <div class="admin-head">
+          <h3>Manage Users</h3>
+          <input
+            id="userSearch"
+            type="search"
+            placeholder="Search by name / userId / email"
+          />
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>UserId</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th style="min-width: 280px">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="usersTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal" id="userModal" style="display: none">
+        <div class="modal-card">
+          <div class="modal-top">
+            <h3 id="modalTitle">User Info</h3>
+            <button class="xbtn" onclick="closeModal()">✖</button>
+          </div>
+
+          <div class="modal-grid">
+            <div class="info">
+              <p><b>Animals:</b> <span id="mAnimals">0</span></p>
+              <p><b>Milk Records:</b> <span id="mMilkRows">0</span></p>
+              <p><b>Today Milk:</b> <span id="mTodayMilk">0</span> L</p>
+              <p><b>Monthly Milk:</b> <span id="mMonthMilk">0</span> L</p>
+              <p><b>Sales Records:</b> <span id="mSalesRows">0</span></p>
+              <p><b>Today Sales:</b> <span id="mTodaySales">₹ 0</span></p>
+              <p><b>Monthly Sales:</b> <span id="mMonthSales">₹ 0</span></p>
+            </div>
+
+            <div class="hint">
+              <p>
+                <b>Note:</b> Admin can only view summary here. You can extend to
+                show full tables if needed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./JS/admin.js"></script>
+    <script src="./JS/auth.js"></script>
+  </body>
+</html>

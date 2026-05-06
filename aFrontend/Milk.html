@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dairy Farm Hub | Milk Records</title>
+    <link rel="stylesheet" href="./CSS/sidebar.css" />
+    <link rel="stylesheet" href="./CSS/Milk.css" />
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <h2>Dairy Farm Hub</h2>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="Animal.html">Animals</a>
+      <a class="active" href="Milk.html">Milk Records</a>
+      <a href="Feed.html">Feed</a>
+      <a href="Sales.html">Sales</a>
+      <button class="logout">Logout</button>
+    </div>
+
+    <div class="main">
+      <div class="topbar">
+        <h1>Milk Records</h1>
+        <div class="user-right" id="topUser"></div>
+      </div>
+
+      <div class="container">
+        <!-- LEFT TABLE -->
+        <div class="card">
+          <h3>Daily Milk Records</h3>
+
+          <!-- ✅ Search Bar Filter -->
+          <div class="filter">
+            <label>Search</label>
+            <input
+              type="search"
+              id="animalSearch"
+              placeholder="Search by animal name"
+              list="animalList"
+              oninput="filterMilk()"
+            />
+            <datalist id="animalList"></datalist>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Animal ID</th>
+                <th>Animal</th>
+                <th>Date</th>
+                <th>Morning (L)</th>
+                <th>Evening (L)</th>
+                <th>Total (L)</th>
+              </tr>
+            </thead>
+            <tbody id="milkTable"></tbody>
+          </table>
+        </div>
+
+        <!-- RIGHT FORM -->
+        <div class="card">
+          <h3>Milk Information</h3>
+
+          <div class="form-group">
+            <label>Animal</label>
+            <!-- ✅ dropdown (animals se) -->
+            <select id="milkAnimalId">
+              <option value="">Select Animal</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Date</label>
+            <input type="date" id="milkDate" />
+          </div>
+
+          <div class="form-group">
+            <label>Morning Milk (Liters)</label>
+            <input type="number" id="milkMorning" />
+          </div>
+
+          <div class="form-group">
+            <label>Evening Milk (Liters)</label>
+            <input type="number" id="milkEvening" />
+          </div>
+
+          <div class="form-group">
+            <label>Total Milk</label>
+            <input type="number" id="milkTotal" disabled />
+          </div>
+
+          <div class="buttons">
+            <button class="add" id="btnMilkAdd">Add</button>
+            <button class="update" id="btnMilkUpdate">Update</button>
+            <button class="delete" id="btnMilkDelete">Delete</button>
+            <button class="delete" style="background:#334155;" id="btnMilkClear">Clear</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./JS/Milk.js"></script>
+    <script src="./JS/auth.js"></script>
+  </body>
+</html>

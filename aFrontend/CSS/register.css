@@ -1,0 +1,131 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    height:100vh;
+    background:#7a8578; /* same as login */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.auth-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.auth-card{
+    background:#efefec;
+    width:420px;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.25);
+    transition:0.4s;
+}
+
+.auth-card:hover{
+    transform:translateY(-6px);
+}
+
+h1{
+    text-align:center;
+    color:#0b3c5d;
+}
+
+.subtitle{
+    text-align:center;
+    font-size:14px;
+    margin-bottom:20px;
+    color:#555;
+}
+
+label{
+    font-weight:600;
+    margin-top:12px;
+    display:block;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    margin-top:6px;
+    outline:none;
+}
+
+.password-box{
+    position:relative;
+}
+
+.eye{
+    position:absolute;
+    right:12px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+}
+
+button{
+    width:100%;
+    margin-top:22px;
+    padding:14px;
+    background:#2faa41;
+    border:none;
+    border-radius:14px;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#249837;
+}
+
+.switch-text{
+    text-align:center;
+    margin-top:15px;
+    font-size:14px;
+}
+
+.switch-text a{
+    color:#0b3c5d;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.error{
+    color:red;
+    font-size:12px;
+    height:14px;
+}
+.auth-card input:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 6px rgba(40,167,69,0.4);
+}
+.popup{
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+}
+
+.popup-box{
+  background:#fff;
+  padding:30px;
+  text-align:center;
+  border-radius:8px;
+}
+
+.popup-box button{
+  margin-top:15px;
+  padding:8px 20px;
+}

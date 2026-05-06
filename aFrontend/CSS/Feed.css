@@ -1,0 +1,117 @@
+/* Feed.css (page-only) */
+
+.main h1 {
+  margin-bottom: 18px;
+  color: var(--text);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.user-right {
+  background: #ffffff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-weight: bold;
+  color: #0b3c5d;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+}
+
+.table-box,
+.form-box {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  width: 50%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+tbody tr:hover {
+  background: #f1f5f9;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 9px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.buttons button {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-add {
+  background-color: #27ae60;
+}
+.btn-add:hover {
+  background-color: #219150;
+}
+
+.btn-update {
+  background-color: #2980b9;
+}
+.btn-update:hover {
+  background-color: #1f6391;
+}
+
+.btn-delete {
+  background-color: #db2916;
+}
+.btn-delete:hover {
+  background-color: #b32010;
+}
+
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+  }
+  .table-box,
+  .form-box {
+    width: 100%;
+  }
+}
