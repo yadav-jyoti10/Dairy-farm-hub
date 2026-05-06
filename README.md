@@ -108,8 +108,7 @@ Response:
 
 ## 📸 Screenshots
 
-![Home Page](images/home.png)
-
+![Home Page](aFrontend/images/home.png)
 ## 👩‍💻 Author
 
 **Your Name**
